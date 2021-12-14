@@ -18,12 +18,13 @@ class IfcFile():
                     pset = definition.RelatingPropertyDefinition
                     indent(pset.Name, 1)
                     for prop in pset.HasProperties:
-                        indent(prop.Name, 2)
                         if prop.Name == from_name:
-                            print("=" * 100)
                             prop.Name = to_name
-                            indent(prop.Name, 2)
                             print("=" * 100)
+                            indent(from_name + " --> " + prop.Name, 2)
+                            print("=" * 100)
+                        else:
+                            indent(prop.Name, 2)
 
 
 
